@@ -1,0 +1,18 @@
+allValid = True
+errorCodes = []
+
+with open(inputFile, 'r') as f:
+    n = int(f.readline().rstrip())
+    for i in range(n):
+        record = f.readline().rstrip()
+        if record:
+            id, isValid, errorMsg = record.split()
+            if isValid == "false":
+                allValid = False
+                errorCodes.append(errorMsg)
+
+if allValid:
+    print("Yes")
+else:
+    print("No")
+    print(" ".join(error_codes))
