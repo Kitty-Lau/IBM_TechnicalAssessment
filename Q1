@@ -5,6 +5,7 @@ def fulfilled(r, s):
         for size in sizes:
             if request == size or request < size:
                 fulfilled = True
+                sizes.remove(size)
                 break
         if not fulfilled:
             return False
