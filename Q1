@@ -1,0 +1,21 @@
+def fulfilled(r, s):
+    sizes = sorted(s)
+    for request in r:
+        fulfilled = False
+        for size in sizes:
+            if request == size or request < size:
+                fulfilled = True
+                break
+        if not fulfilled:
+            return False
+    return True
+   
+n = int(input())
+s = input().split()
+m = int(input())
+r = input().split()
+
+if fulfilled(r, s):
+    print("YES")
+else:
+    print("NO")
